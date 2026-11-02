@@ -2,7 +2,7 @@
 
 A PyCharm-style Markdown editor that runs entirely in your browser. Write `.md` files on the left, see the rendered result live on the right, and save real Markdown files to your device. It is one self-contained `index.html` with no install, no build step, no CDN, and it works offline.
 
-![Website]("https://worldo8479.github.io/MD-Studio")
+[Website]("https://worldo8479.github.io/MD-Studio")
 
 ## Features
 
